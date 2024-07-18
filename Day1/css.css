@@ -1,0 +1,83 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+    background: linear-gradient(to top right,#433BA0 0%,#4EBFC8 100%);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.all{
+    position: relative;
+}
+.number1 {
+    position: absolute;
+    height: 105px;
+    width: 24px;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 10;
+    top: -97;
+    left: -18;
+    box-shadow: 0 0 13px rgba(0,0,0,0.2);
+
+}
+.number2{
+    position: absolute;
+    transform: rotate(50deg);
+    top: -97;
+    left: -40;
+    right: 0;
+    height: 50px;
+    width: 24px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 13px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.zero1{
+    position: absolute;
+    top: -94;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 24px solid #fff;
+    box-shadow: 0 0 13px rgba(0,0,0,0.2);
+    z-index: 8;
+}
+.zero2{
+    position: absolute;
+    top: -94;
+    right: -55;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 24px solid #fff;
+    box-shadow: 0 0 13px rgba(0,0,0,0.2);
+    z-index: 7  ;
+}
+.text{
+
+}
+.text2{
+    
+}

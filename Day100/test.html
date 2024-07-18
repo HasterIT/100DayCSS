@@ -1,0 +1,298 @@
+<style>
+  :root {
+    --color-main: #272c34;
+    --color: #f1f4f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-main: black;
+      --color: white;
+    }
+  }
+  .frame {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    width: 570px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background: var(--color-main);
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .word {
+    position: absolute;
+    height: 120px;
+    width: 400px;
+    top: 140px;
+    left: 0;
+  }
+  .word .light {
+    position: absolute;
+    background: #1a1e24;
+    box-shadow: 0px 0px 6px 0px #1a1e24;
+    border-radius: 3px;
+  }
+  .word .dd {
+    position: absolute;
+    width: 72px;
+    height: 120px;
+    top: 0;
+    left: 68px;
+  }
+  .word .dd .left {
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 6px;
+    animation: flickr 6s ease-in-out 3.32s infinite alternate both;
+  }
+  .word .dd .right {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 120px;
+    width: 70px;
+  }
+  .word .dd .right .circleBox .circle {
+    animation: flickr-circle 6s ease-in-out 3.15s infinite alternate both;
+  }
+  .word .dd .right .dot {
+    animation: flickr-dots 6s ease-in-out 3.15s infinite alternate both;
+  }
+  .word .dd .right .circleBox {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    width: 70px;
+    overflow: hidden;
+  }
+  .word .dd .right .circleBox .circle {
+    box-sizing: border-box;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 10px;
+    right: 10px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: var(--color-main) var(--color-main) transparent transparent;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px var(--color-main),
+      inset 0px 0px 10px 0px var(--color);
+    transform: rotate(45deg);
+  }
+  .word .dd .right .topDotBox {
+    position: absolute;
+    top: -10px;
+    right: 60px;
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+  }
+  .word .dd .right .bottomDotBox {
+    position: absolute;
+    bottom: -10px;
+    right: 60px;
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+  }
+  .word .dd .right .dot {
+    top: 10px;
+    right: -12px;
+    width: 15px;
+    height: 6px;
+  }
+  .word .dd .rightSVG {
+    position: absolute;
+    top: 0;
+    right: 0;
+    fill: none;
+    stroke: var(--color-main);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 88 176 176;
+    filter: drop-shadow(0px 0px 6px var(--color-main));
+  }
+  .word .mm {
+    position: absolute;
+    width: 86px;
+    height: 120px;
+    top: 0;
+    left: 339px;
+  }
+  .word .mm .left {
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 6px;
+    animation: flickr 6s ease-in-out 2s infinite alternate both;
+  }
+  .word .mm .middle-left {
+    top: 0;
+    left: 9px;
+    height: 6px;
+    width: 135px;
+    transform-origin: 3px 3px;
+    transform: rotate(62deg);
+    animation: flickr 6s ease-in-out 1.6s infinite alternate both;
+  }
+  .word .mm .middle-right {
+    bottom: 0;
+    right: -129px;
+    height: 6px;
+    width: 135px;
+    transform-origin: 3px 3px;
+    transform: rotate(-62deg);
+    animation: flickr 6s ease-in-out 1.3s infinite alternate both;
+  }
+  .word .mm .right {
+    top: 0;
+    right: -69px;
+    height: 120px;
+    width: 6px;
+    animation: flickr 6s ease-in-out 1s infinite alternate both;
+  }
+  .word .mm1 {
+    position: absolute;
+    width: 86px;
+    height: 120px;
+    top: 0;
+    left: 162px;
+  }
+  .word .mm1 .left {
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 6px;
+    animation: flickr 6s ease-in-out 3s infinite alternate both;
+  }
+  .word .mm1 .middle-left {
+    top: 0;
+    left: 9px;
+    height: 6px;
+    width: 135px;
+    transform-origin: 3px 3px;
+    transform: rotate(62deg);
+    animation: flickr 6s ease-in-out 2.9s infinite alternate both;
+  }
+  .word .mm1 .middle-right {
+    bottom: 0;
+    right: -129px;
+    height: 6px;
+    width: 135px;
+    transform-origin: 3px 3px;
+    transform: rotate(-62deg);
+    animation: flickr 6s ease-in-out 2.6s infinite alternate both;
+  }
+  .word .mm1 .right {
+    top: 0;
+    right: -69px;
+    height: 120px;
+    width: 6px;
+    animation: flickr 6s ease-in-out 2.3s infinite alternate both;
+  }
+  @keyframes flickr {
+    35%,
+    37%,
+    39%,
+    41%,
+    100% {
+      background: var(--color);
+      box-shadow: 0px 0px 10px 0px var(--color);
+    }
+    0%,
+    34%,
+    36%,
+    36%,
+    38%,
+    40% {
+      background: var(--color-main);
+      box-shadow: 0px 0px 6px 0px var(--color-main);
+    }
+  }
+  @keyframes flickr-circle {
+    35%,
+    37%,
+    39%,
+    41%,
+    100% {
+      border-color: var(--color) var(--color) transparent transparent;
+      box-shadow: 0px 0px 10px 0px var(--color),
+        inset 0px 0px 10px 0px var(--color);
+    }
+    0%,
+    34%,
+    36%,
+    36%,
+    38%,
+    40% {
+      border-color: var(--color-main) var(--color-main) transparent transparent;
+      box-shadow: 0px 0px 6px 0px var(--color-main),
+        inset 0px 0px 6px 0px var(--color-main);
+    }
+  }
+  @keyframes flickr-dots {
+    35%,
+    37%,
+    39%,
+    41%,
+    100% {
+      background: var(--color);
+      box-shadow: 0px 0px 9px 1px var(--color);
+    }
+    0%,
+    34%,
+    36%,
+    36%,
+    38%,
+    40% {
+      background: var(--color-main);
+      box-shadow: 0px 0px 5px 1px var(--color-main);
+    }
+  }
+</style>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+</head>
+<div class="frame">
+  <div class="word">
+    <div class="dd">
+      <div class="light left"></div>
+      <div class="right">
+        <div class="circleBox">
+          <div class="circle"></div>
+        </div>
+        <div class="topDotBox">
+          <div class="light dot"></div>
+        </div>
+        <div class="bottomDotBox">
+          <div class="light dot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mm">
+      <div class="light left"></div>
+      <div class="light middle-left"></div>
+      <div class="light middle-right"></div>
+      <div class="light right"></div>
+    </div>
+    <div class="mm1">
+      <div class="light left"></div>
+      <div class="light middle-left"></div>
+      <div class="light middle-right"></div>
+      <div class="light right"></div>
+    </div>
+  </div>
+</div>
